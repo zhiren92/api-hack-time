@@ -19,6 +19,7 @@
 
   
     <script>
+      var mic_on = false;
       var mic = new Wit.Microphone(document.getElementById("microphone"));
       var info = function (msg) {
         document.getElementById("info").innerHTML = msg;
@@ -38,6 +39,8 @@
       };
       mic.onresult = function (intent, entities) {
         var r = kv("intent", intent);
+        console.log(intent);
+        console.log(entities);
 
         for (var k in entities) {
           var e = entities[k];
@@ -72,6 +75,20 @@
           v = JSON.stringify(v);
         }
         return k + "=" + v + "\n";
+      }
+
+      window.onkeydown = function(keyDown) {
+        console.log(keyDown.keyCode);
+        switch (keyDown.keyCode) {
+          case 65:
+          mic.start();
+          break;
+          case 83:
+          mic.stop();
+          break;
+          default:
+          break;
+        }
       }
     </script>
   </body>
