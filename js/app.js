@@ -11,10 +11,10 @@ $(function(){
     });
   $( "#up" ).click(function(){
     console.log("up clicked")
-    $( "#spaceship" ).animate({ "up": "+=50px" }, "slow" );
+    $( "#spaceship" ).animate({ "top": "-=50px" }, "slow" );
     });
   $( "#down" ).click(function(){
     console.log("down clicked")
-    $( "#spaceship" ).animate({ "down": "-=50px" }, "slow" );
+    $( "#spaceship" ).animate({ "top": "+=50px" }, "slow" );
     });
 });
