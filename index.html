@@ -21,13 +21,13 @@
 
 
       <img src="img/spaceship.png" id="spaceship">
-      <img src="img/asteroid.png" class="rock" id="one">
-      <img src="img/asteroid.png" class="rock" id="two">
-      <img src="img/asteroid.png" class="rock" id="three">
-      <img src="img/asteroid.png" class="rock" id="four">
-      <img src="img/asteroid.png" class="rock" id="five">
-      <img src="img/asteroid.png" class="rock" id="six">
-      <img src="img/asteroid.png" class="rock" id="seven">
+      <img src="img/asteroid.png" class="asteroid" id="one">
+      <img src="img/asteroid.png" class="asteroid" id="two">
+      <img src="img/asteroid.png" class="asteroid" id="three">
+      <img src="img/asteroid.png" class="asteroid" id="four">
+      <img src="img/asteroid.png" class="asteroid" id="five">
+      <img src="img/asteroid.png" class="asteroid" id="six">
+      <img src="img/asteroid.png" class="asteroid" id="seven">
 
   
     <script>
@@ -172,12 +172,13 @@
         var shipLocation = $('#spaceship').offset();
         console.log("asteroids");
         console.log($('.asteroid'))
-        console.log(offsets);
+        // console.log(offsets);
         console.log("shipLocation:");
         console.log(shipLocation);
         for (var i = 0; i < asteroids.length; i++) {
           var as_loc = $(asteroids[i]).offset();
-          if (as_loc.top==shipLocation.top&&as_loc.left==shipLocation.left) {
+          console.log(as_loc);
+          if ((as_loc.top+100)>=shipLocation.top&&as_loc.top<=(shipLocation.top+125)&&(as_loc.left+100)>=shipLocation.left&&as_loc.left<=(shipLocation.left+200)) {
             crash();
             break;
           }
@@ -186,6 +187,7 @@
       }
 
       function crash(){
+        console.log("CRASH!")
         $('#spaceship').attr("src", "img/explosion.png")
       }
     </script>
