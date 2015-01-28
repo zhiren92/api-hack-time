@@ -7,17 +7,17 @@
   </head>
   <body style="text-align: center;">
 
-      <button id="left">&laquo;</button>
+     <!--  <button id="left">&laquo;</button>
       <button id="right">&raquo;</button>
       <button id="up">up</button>
-      <button id="down">down</button>
+      <button id="down">down</button> -->
 
-    <pre id="result"></pre>
+    <!-- <pre id="result"></pre>
     <div id="info"></div>
-    <div id="error"></div>
+    <div id="error"></div> -->
 
     <script src="microphone/microphone.min.js"></script>
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
 
 
       <img src="img/spaceship.png" id="spaceship">
@@ -26,10 +26,10 @@
     <script>
       var mic = new Wit.Microphone(document.getElementById("microphone"));
       var info = function (msg) {
-        document.getElementById("info").innerHTML = msg;
+        // document.getElementById("info").innerHTML = msg;
       };
       var error = function (msg) {
-        document.getElementById("error").innerHTML = msg;
+        // document.getElementById("error").innerHTML = msg;
       };
       mic.onready = function () {
         info("Microphone is ready to record");
@@ -58,22 +58,27 @@
           }
         }
 
-        document.getElementById("result").innerHTML = r;
+        // document.getElementById("result").innerHTML = r;
 
         switch(intent) {
           case "move_up":
+          console.log("move_up");
           moveUp();
           break;
           case "move_down":
+          console.log("move_down");
           moveDown();
           break;
           case "move_left":
+          console.log("move_left");
           moveLeft();
           break;
           case "move_right":
+          console.log("move_right");
           moveRight();
           break;
           default:
+          console.log("crap");
           break;
         }
 
@@ -128,6 +133,35 @@
           default:
           break;
         }
+      }
+
+
+      function moveRight() {
+        console.log("right clicked")
+        $( "#spaceship" ).animate({ "left": "+=50px" }, "slow" );
+        checkIfCrash();
+      }
+      
+      function moveLeft() {
+        console.log("left clicked")
+        $( "#spaceship" ).animate({ "left": "-=50px" }, "slow" );
+        checkIfCrash();
+      }
+
+      function moveUp(){
+        console.log("up clicked")
+        $( "#spaceship" ).animate({ "top": "-=50px" }, "slow" );
+        checkIfCrash();
+      }
+
+      function moveDown(){
+        console.log("down clicked")
+        $( "#spaceship" ).animate({ "top": "+=50px" }, "slow" );
+        checkIfCrash();
+      }
+
+      function checkIfCrash() {
+        
       }
     </script>
   </body>
