@@ -168,7 +168,25 @@
       }
 
       function checkIfCrash() {
-        
+        var asteroids =  $('.asteroid');
+        var shipLocation = $('#spaceship').offset();
+        console.log("asteroids");
+        console.log($('.asteroid'))
+        console.log(offsets);
+        console.log("shipLocation:");
+        console.log(shipLocation);
+        for (var i = 0; i < asteroids.length; i++) {
+          var as_loc = $(asteroids[i]).offset();
+          if (as_loc.top==shipLocation.top&&as_loc.left==shipLocation.left) {
+            crash();
+            break;
+          }
+
+        }
+      }
+
+      function crash(){
+        $('#spaceship').attr("src", "img/explosion.png")
       }
     </script>
   </body>
