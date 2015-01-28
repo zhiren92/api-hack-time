@@ -1,4 +1,6 @@
 #spaceship{
   width:200px;
   height:125px;
+  position: absolute;
+  margin: 5px;
 }
