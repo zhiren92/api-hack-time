@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body style="text-align: center;">
-    <center><div id="microphone"></div></center>
+    <!-- <center><div id="microphone"></div></center> -->
     <pre id="result"></pre>
     <div id="info"></div>
     <div id="error"></div>
@@ -19,7 +19,6 @@
 
   
     <script>
-      var mic_on = false;
       var mic = new Wit.Microphone(document.getElementById("microphone"));
       var info = function (msg) {
         document.getElementById("info").innerHTML = msg;
@@ -81,9 +80,26 @@
         console.log(keyDown.keyCode);
         switch (keyDown.keyCode) {
           case 65:
+          //a
           mic.start();
           break;
           case 83:
+          // s
+          mic.stop();
+          break;
+          case 32:
+          // space bar
+          mic.start();
+          break;
+          default:
+          break;
+        }
+      }
+
+      window.onkeyup = function(keyUp) {
+        switch (keyUp.keyCode) {
+          case 32:
+          // space bar
           mic.stop();
           break;
           default:
