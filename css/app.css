@@ -6,3 +6,52 @@
   left: 200px;
   margin: 5px;
 }
+
+body {
+  background-image:url("newgalaxy.jpg");
+}
+
+.rock{
+  width:100px;
+  height:100px;
+
+}
+
+#one{
+  position:absolute;
+  left:800px;
+  top:400px;
+}
+#two{
+  position:absolute;
+  left:200px;
+  top:100px;
+}
+#three{
+  position:absolute;
+  left:300px;
+  top:200px;
+}
+
+#four{
+  position:absolute;
+  left:100px;
+  top:600px;
+}
+#five{
+  position:absolute;
+  left:50px;
+  top:200px;
+}
+#six{
+  position:absolute;
+  left:500px;
+  top:500px;
+}
+#seven{
+  position:absolute;
+  left:600px;
+  top:123px;
+}
+
+
