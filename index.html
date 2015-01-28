@@ -59,6 +59,24 @@
         }
 
         document.getElementById("result").innerHTML = r;
+
+        switch(intent) {
+          case "move_up":
+          moveUp();
+          break;
+          case "move_down":
+          moveDown();
+          break;
+          case "move_left":
+          moveLeft();
+          break;
+          case "move_right":
+          moveRight();
+          break;
+          default:
+          break;
+        }
+
       };
       mic.onerror = function (err) {
         error("Error: " + err);
